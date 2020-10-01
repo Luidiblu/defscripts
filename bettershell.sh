@@ -1,9 +1,18 @@
+
+echo "Iniciando"
+
 stty raw -echo
+
+echo "Guenta ai"
+sleep 2
 
 fg
 
-reset
+echo "Guenta ai dnv"
+sleep 2
 
-export SHELL=bash
+echo "Digita >> reset <<"
+echo "Digita >> reset <<"
+echo "Digita >> reset <<"
+echo "Digita >> reset <<"
 
-export TERM=xterm-256color
